@@ -1,14 +1,14 @@
+// DetailsScreen.js
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text } from 'react-native';
 
-const DetailsScreen = ({ navigation }) => {
+const DetailsScreen = ({ route }) => {
+  const { itemId, otherParam } = route.params;
+
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Details Screen</Text>
-      <Button
-        title="Go back to Home"
-        onPress={() => navigation.navigate('Home')}
-      />
+    <View>
+      <Text>Item ID: {itemId}</Text>
+      <Text>Other Param: {otherParam}</Text>
     </View>
   );
 };
