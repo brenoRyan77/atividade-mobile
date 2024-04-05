@@ -6,10 +6,8 @@ const FlexboxExample = ({ initialColor }) => {
 
   return (
     <View style={styles.container}>
-      {}
-      <View style={[styles.box, { backgroundColor: initialColor }]}></View>
-      {}
-      <View style={[styles.box, { backgroundColor: secondBoxColor }]}></View>
+      <View style={styles.box(initialColor)}></View>
+      <View style={styles.box(secondBoxColor)}></View>
     </View>
   );
 };
@@ -21,11 +19,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  box: {
+  box: color => ({
     width: 50,
     height: 50,
     margin: 5,
-  },
+    backgroundColor: color,
+  }),
 });
 
 export default FlexboxExample;
