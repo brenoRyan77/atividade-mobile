@@ -1,11 +1,20 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { View, StyleSheet, Button } from 'react-native';
 
 const FlexboxExample = ({ color }) => {
+  const [firstBoxColor, setFirstBoxColor] = useState(color);
+  const changeFirstBoxColor = () => {
+    setFirstBoxColor('red');
+  };
+
   return (
     <View style={styles.container}>
+      {}
+      <View style={[styles.box, { backgroundColor: firstBoxColor }]}></View>
+      {}
       <View style={[styles.box, { backgroundColor: color }]}></View>
-      <View style={[styles.box, { backgroundColor: color }]}></View>
+      {}
+      <Button title="Mudar Cor" onPress={changeFirstBoxColor} />
     </View>
   );
 };
