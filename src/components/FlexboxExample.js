@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
-const FlexboxExample = ({ initialColor }) => {
-  const [secondBoxColor, setSecondBoxColor] = useState('blue');
-
+const FlexboxExample = ({ colors }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.box(initialColor)}></View>
-      <View style={styles.box(secondBoxColor)}></View>
+      {colors.map((color, index) => (
+        <View key={index} style={[styles.box, { backgroundColor: color }]} />
+      ))}
     </View>
   );
 };
@@ -19,12 +18,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  box: color => ({
+  box: {
     width: 50,
     height: 50,
     margin: 5,
-    backgroundColor: color,
-  }),
+  },
 });
 
 export default FlexboxExample;
