@@ -1,11 +1,12 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import FlexboxExample from './src/components/FlexboxExample'
+import { StyleSheet, View } from 'react-native';
+import Navigation from './src/Navigation/Navigation';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <FlexboxExample color="blue"/>
+      <Navigation /> {/* Renderizando o componente Navigation */}
       <StatusBar style="auto" />
     </View>
   );
