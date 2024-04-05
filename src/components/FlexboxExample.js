@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
-const FlexboxExample = () => {
+const FlexboxExample = ({ color }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.box}></View>
-      <View style={styles.box}></View>
+      <View style={[styles.box, { backgroundColor: color }]}></View>
+      <View style={[styles.box, { backgroundColor: color }]}></View>
     </View>
   );
 };
@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
   box: {
     width: 50,
     height: 50,
-    backgroundColor: 'blue',
     margin: 5,
   },
 });

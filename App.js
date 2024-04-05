@@ -5,7 +5,7 @@ import FlexboxExample from './src/components/FlexboxExample'
 export default function App() {
   return (
     <View style={styles.container}>
-      <FlexboxExample />
+      <FlexboxExample color="red"/>
       <StatusBar style="auto" />
     </View>
   );
