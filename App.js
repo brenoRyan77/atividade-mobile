@@ -1,6 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Image, FlatList, Text } from 'react-native';
+import FlexboxExample from './src/components/FlexboxExample'; // Importando o componente FlexboxExample
 
 const data = [
   { id: '1', text: 'Item 1' },
@@ -19,6 +20,7 @@ const renderItem = ({ item }) => (
 export default function App() {
   return (
     <View style={styles.container}>
+      <FlexboxExample initialColor="red" /> {/* Renderizando o componente FlexboxExample com a cor inicial "red" */}
       <Image
         style={styles.image}
         source={{ uri: 'https://example.com/image.jpg' }}
